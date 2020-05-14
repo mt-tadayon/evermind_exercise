@@ -43,16 +43,6 @@ class DashboardScreen extends StatelessWidget {
             ),
           ),
           Align(
-            alignment: Alignment.center,
-            child: IconButton(
-              icon: Icon(
-                Icons.play_circle_filled,
-                size: 64.0,
-              ),
-              onPressed: () {},
-            ),
-          ),
-          Align(
             alignment: Alignment.bottomCenter,
             child: Container(
               height: MediaQuery.of(context).size.height / 2,
@@ -65,7 +55,30 @@ class DashboardScreen extends StatelessWidget {
                   color: const Color(0xFFFFFFFF)),
               child: Stack(
                 children: [
-                  Text('Recommended Programmes')
+                  Container(
+                    height: 60.0,
+                    alignment: Alignment.center,
+                    child: Text(
+                      'Recommended Programmes',
+                      style: GoogleFonts.libreBaskerville(
+                        fontSize: 16.0,
+                      ),
+                    ),
+                    decoration: BoxDecoration(
+                      border: Border(
+                        bottom: BorderSide(
+                          color: const Color(0xFFE5E5E5),
+                          width: 0.5
+                        )
+                      )
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      Card(
+                      )
+                    ],
+                  )
                 ],
               ),
             ),
