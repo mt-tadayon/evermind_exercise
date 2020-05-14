@@ -19,12 +19,9 @@ dev_dependencies:
     sdk: flutter
 
 flutter:
-  fonts:
-    - family: AbrilFatface
-      fonts:
-        - asset: lib/assets/fonts/AbrilFatface-Regular.ttf
-          style: normal
   uses-material-design: true
   assets:
     - lib/assets/images/dashboard_background.jpg
+    - lib/assets/images/working_thougths.jpg
+    - lib/assets/images/gratitude.jpg
 

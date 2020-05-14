@@ -1,3 +1,4 @@
+import 'package:evermindexercise/screen/widgets/program_card.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -53,7 +54,7 @@ class DashboardScreen extends StatelessWidget {
                     topRight: Radius.circular(20.0),
                   ),
                   color: const Color(0xFFFFFFFF)),
-              child: Stack(
+              child: Column(
                 children: [
                   Container(
                     height: 60.0,
@@ -67,15 +68,21 @@ class DashboardScreen extends StatelessWidget {
                     decoration: BoxDecoration(
                       border: Border(
                         bottom: BorderSide(
-                          color: const Color(0xFFE5E5E5),
-                          width: 0.5
-                        )
-                      )
+                            color: const Color(0xFFE5E5E5), width: 0.5),
+                      ),
                     ),
                   ),
                   Row(
                     children: [
-                      Card(
+                      ProgramCard(
+                        programDuration: '7 days programme',
+                        programName: 'Working with \n thougths',
+                        cardImagePath: 'lib/assets/images/working_thougths.jpg',
+                      ),
+                      ProgramCard(
+                        programDuration: '4 day programme',
+                        programName: '4 days of \n gratitude',
+                        cardImagePath: 'lib/assets/images/gratitude.jpg',
                       )
                     ],
                   )
@@ -86,6 +93,7 @@ class DashboardScreen extends StatelessWidget {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor: Colors.black,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
@@ -104,3 +112,4 @@ class DashboardScreen extends StatelessWidget {
     );
   }
 }
+
