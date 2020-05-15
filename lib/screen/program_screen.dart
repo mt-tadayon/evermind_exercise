@@ -10,7 +10,7 @@ class ProgramScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+      body: Stack(
         children: [
           Container(
             height: MediaQuery.of(context).size.height/2,
@@ -18,9 +18,22 @@ class ProgramScreen extends StatelessWidget {
               image: DecorationImage(image: AssetImage(backgroundCardImage), fit: BoxFit.cover)
             ),
           ),
-          Container(
-            height: MediaQuery.of(context).size.height/2,
-            color: const Color(0xFFFFFFFF),
+          Positioned(
+            child: AppBar(
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+                leading: IconButton(
+                  icon: Icon(Icons.arrow_back, color: Colors.black),
+                  onPressed: () => Navigator.of(context).pop(),
+                ),
+            ),
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              height: MediaQuery.of(context).size.height/2,
+              color: const Color(0xFFFFFFFF),
+            ),
           )
         ],
       ),
