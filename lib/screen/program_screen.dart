@@ -6,8 +6,11 @@ class ProgramScreen extends StatelessWidget {
   final String cardTitle;
   final String backgroundCardImage;
   final String heroTag;
+  final String durationTag;
+  final String nameTag;
 
-  ProgramScreen({this.cardDuration, this.cardTitle, this.backgroundCardImage, this.heroTag});
+  ProgramScreen(
+      {this.cardDuration, this.cardTitle, this.backgroundCardImage, this.heroTag, this.durationTag, this.nameTag});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +18,10 @@ class ProgramScreen extends StatelessWidget {
       body: Stack(
         children: [
           Container(
-            height: MediaQuery.of(context).size.height / 2,
+            height: MediaQuery
+                .of(context)
+                .size
+                .height / 2,
             child: Hero(
                 tag: heroTag,
                 child: Image.asset(
@@ -36,15 +42,24 @@ class ProgramScreen extends StatelessWidget {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              height: MediaQuery.of(context).size.height / 2,
+              height: MediaQuery
+                  .of(context)
+                  .size
+                  .height / 2,
               color: const Color(0xFFF8F9FA),
             ),
           ),
           Align(
             alignment: Alignment.center,
             child: Container(
-              height: MediaQuery.of(context).size.height / 3,
-              width: MediaQuery.of(context).size.width * 0.9,
+              height: MediaQuery
+                  .of(context)
+                  .size
+                  .height / 3,
+              width: MediaQuery
+                  .of(context)
+                  .size
+                  .width * 0.9,
               decoration: BoxDecoration(
                 boxShadow: [
                   BoxShadow(
@@ -61,21 +76,27 @@ class ProgramScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Text(
-                    cardDuration,
-                    textAlign: TextAlign.center,
+                  Hero(
+                    tag: durationTag,
+                    child: Text(
+                      cardDuration,
+                      textAlign: TextAlign.center,
+                    ),
                   ),
-                  Text(
-                    cardTitle,
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.libreBaskerville(
-                        fontWeight: FontWeight.w700, fontSize: 28.0),
+                  Hero(
+                    tag: nameTag,
+                    child: Text(
+                      cardTitle,
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.libreBaskerville(
+                          fontWeight: FontWeight.w700, fontSize: 28.0),
+                    ),
                   ),
                   Center(
                     child: Text(
                       'In this 7-day programm, we\'ll help \n'
-                      'you to write your thougths down, \n'
-                      'identify any negative thinking and ...',
+                          'you to write your thougths down, \n'
+                          'identify any negative thinking and ...',
                       textAlign: TextAlign.left,
                       style: TextStyle(fontSize: 16.0),
                     ),

@@ -54,41 +54,47 @@ class DashboardScreen extends StatelessWidget {
                     topRight: Radius.circular(20.0),
                   ),
                   color: const Color(0xFFFFFFFF)),
-              child: Column(
-                children: [
-                  Container(
-                    height: 60.0,
-                    alignment: Alignment.center,
-                    child: Text(
-                      'Recommended Programmes',
-                      style: GoogleFonts.libreBaskerville(
-                        fontSize: 16.0,
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Container(
+                      height: 60.0,
+                      alignment: Alignment.center,
+                      child: Text(
+                        'Recommended Programmes',
+                        style: GoogleFonts.libreBaskerville(
+                          fontSize: 16.0,
+                        ),
+                      ),
+                      decoration: BoxDecoration(
+                        border: Border(
+                          bottom: BorderSide(
+                              color: const Color(0xFFE5E5E5), width: 0.5),
+                        ),
                       ),
                     ),
-                    decoration: BoxDecoration(
-                      border: Border(
-                        bottom: BorderSide(
-                            color: const Color(0xFFE5E5E5), width: 0.5),
-                      ),
-                    ),
-                  ),
-                  Row(
-                    children: [
-                      ProgramCard(
-                        programDuration: '7 days programme',
-                        programName: 'Working with \n thougths',
-                        cardImagePath: 'lib/assets/images/working_thougths.jpg',
-                        heroTag: 'thougths',
-                      ),
-                      ProgramCard(
-                        programDuration: '4 day programme',
-                        programName: '4 days of \n gratitude',
-                        cardImagePath: 'lib/assets/images/gratitude.jpg',
-                        heroTag: 'gratitude',
-                      )
-                    ],
-                  )
-                ],
+                    Row(
+                      children: [
+                        ProgramCard(
+                          programDuration: '7 days programme',
+                          programName: 'Working with \n thougths',
+                          cardImagePath: 'lib/assets/images/working_thougths.jpg',
+                          heroTag: 'thougths',
+                          durationTag: '7 days',
+                          nameTag: 'Working with thougths',
+                        ),
+                        ProgramCard(
+                          programDuration: '4 day programme',
+                          programName: '4 days of \n gratitude',
+                          cardImagePath: 'lib/assets/images/gratitude.jpg',
+                          heroTag: 'gratitude',
+                          durationTag: '4 day',
+                          nameTag: '4 days of gratitude',
+                        )
+                      ],
+                    )
+                  ],
+                ),
               ),
             ),
           )
