@@ -6,11 +6,9 @@ class ProgramScreen extends StatelessWidget {
   final String cardTitle;
   final String backgroundCardImage;
   final String heroTag;
-  final String durationTag;
-  final String nameTag;
 
   ProgramScreen(
-      {this.cardDuration, this.cardTitle, this.backgroundCardImage, this.heroTag, this.durationTag, this.nameTag});
+      {this.cardDuration, this.cardTitle, this.backgroundCardImage, this.heroTag});
 
   @override
   Widget build(BuildContext context) {
@@ -76,21 +74,15 @@ class ProgramScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Hero(
-                    tag: durationTag,
-                    child: Text(
-                      cardDuration,
-                      textAlign: TextAlign.center,
-                    ),
+                  Text(
+                    cardDuration,
+                    textAlign: TextAlign.center,
                   ),
-                  Hero(
-                    tag: nameTag,
-                    child: Text(
-                      cardTitle,
-                      textAlign: TextAlign.center,
-                      style: GoogleFonts.libreBaskerville(
-                          fontWeight: FontWeight.w700, fontSize: 28.0),
-                    ),
+                  Text(
+                    cardTitle,
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.libreBaskerville(
+                        fontWeight: FontWeight.w700, fontSize: 28.0),
                   ),
                   Center(
                     child: Text(

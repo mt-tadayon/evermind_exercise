@@ -8,16 +8,12 @@ class ProgramCard extends StatelessWidget {
   final String programName;
   final String cardImagePath;
   final String heroTag;
-  final String durationTag;
-  final String nameTag;
 
   ProgramCard(
       {this.programDuration,
       this.programName,
       this.cardImagePath,
-      this.heroTag,
-      this.durationTag,
-      this.nameTag});
+      this.heroTag});
 
   @override
   Widget build(BuildContext context) {
@@ -33,8 +29,6 @@ class ProgramCard extends StatelessWidget {
                       cardDuration: programDuration,
                       cardTitle: programName,
                       heroTag: heroTag,
-                      nameTag: nameTag,
-                      durationTag: durationTag,
                     )),
           );
         },
@@ -62,21 +56,15 @@ class ProgramCard extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(
                     horizontal: 10.0, vertical: 15.0),
-                child: Hero(
-                  tag: durationTag,
-                  child: Text(this.programDuration),
-                ),
+                child: Text(this.programDuration),
               ),
               Padding(
                 padding: const EdgeInsets.only(bottom: 15.0),
-                child: Hero(
-                  tag: nameTag,
-                  child: Text(
-                    this.programName,
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.libreBaskerville(
-                      fontWeight: FontWeight.w700,
-                    ),
+                child: Text(
+                  this.programName,
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.libreBaskerville(
+                    fontWeight: FontWeight.w700,
                   ),
                 ),
               ),
