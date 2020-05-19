@@ -5,8 +5,9 @@ class ProgramScreen extends StatelessWidget {
   final String cardDuration;
   final String cardTitle;
   final String backgroundCardImage;
+  final String heroTag;
 
-  ProgramScreen({this.cardDuration, this.cardTitle, this.backgroundCardImage});
+  ProgramScreen({this.cardDuration, this.cardTitle, this.backgroundCardImage, this.heroTag});
 
   @override
   Widget build(BuildContext context) {
@@ -15,10 +16,12 @@ class ProgramScreen extends StatelessWidget {
         children: [
           Container(
             height: MediaQuery.of(context).size.height / 2,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage(backgroundCardImage), fit: BoxFit.cover),
-            ),
+            child: Hero(
+                tag: heroTag,
+                child: Image.asset(
+                  backgroundCardImage,
+                  fit: BoxFit.cover,
+                )),
           ),
           Positioned(
             child: AppBar(

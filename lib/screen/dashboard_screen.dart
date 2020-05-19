@@ -78,11 +78,13 @@ class DashboardScreen extends StatelessWidget {
                         programDuration: '7 days programme',
                         programName: 'Working with \n thougths',
                         cardImagePath: 'lib/assets/images/working_thougths.jpg',
+                        heroTag: 'thougths',
                       ),
                       ProgramCard(
                         programDuration: '4 day programme',
                         programName: '4 days of \n gratitude',
                         cardImagePath: 'lib/assets/images/gratitude.jpg',
+                        heroTag: 'gratitude',
                       )
                     ],
                   )

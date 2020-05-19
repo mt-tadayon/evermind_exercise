@@ -7,8 +7,13 @@ class ProgramCard extends StatelessWidget {
   final String programDuration;
   final String programName;
   final String cardImagePath;
+  final String heroTag;
 
-  ProgramCard({this.programDuration, this.programName, this.cardImagePath});
+  ProgramCard(
+      {this.programDuration,
+      this.programName,
+      this.cardImagePath,
+      this.heroTag});
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +28,7 @@ class ProgramCard extends StatelessWidget {
                       backgroundCardImage: cardImagePath,
                       cardDuration: programDuration,
                       cardTitle: programName,
+                  heroTag: heroTag
                     )),
           );
         },
@@ -38,8 +44,11 @@ class ProgramCard extends StatelessWidget {
                     topLeft: Radius.circular(5.0),
                     topRight: Radius.circular(5.0),
                   ),
-                  image: DecorationImage(
-                    image: AssetImage(this.cardImagePath),
+                ),
+                child: Hero(
+                  tag: heroTag,
+                  child: Image.asset(
+                    this.cardImagePath,
                     fit: BoxFit.cover,
                   ),
                 ),
