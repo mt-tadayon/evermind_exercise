@@ -23,13 +23,30 @@ class ProgramCard extends StatelessWidget {
         onTap: () {
           Navigator.push(
             context,
-            MaterialPageRoute(
-                builder: (context) => ProgramScreen(
-                      backgroundCardImage: cardImagePath,
-                      cardDuration: programDuration,
-                      cardTitle: programName,
-                      heroTag: heroTag,
-                    )),
+            PageRouteBuilder(
+                pageBuilder: (context, animationFirst, animationSecond) {
+                  return ProgramScreen(
+                    backgroundCardImage: cardImagePath,
+                    cardDuration: programDuration,
+                    cardTitle: programName,
+                    heroTag: heroTag,
+                  );
+                },
+                transitionsBuilder: (
+                  context,
+                  animationFirst,
+                  animationSecond,
+                  child,
+                ) {
+                  return SlideTransition(
+                    position: Tween<Offset>(
+                      begin: Offset(0.0, 1.0),
+                      end: Offset.zero,
+                    ).animate(animationFirst),
+                    child: child,
+                  );
+                },
+                transitionDuration: Duration(milliseconds: 1000)),
           );
         },
         child: Card(
