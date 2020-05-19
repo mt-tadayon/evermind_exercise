@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ProgramScreen extends StatelessWidget {
   final String cardDuration;
@@ -15,8 +16,9 @@ class ProgramScreen extends StatelessWidget {
           Container(
             height: MediaQuery.of(context).size.height / 2,
             decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage(backgroundCardImage), fit: BoxFit.cover)),
+              image: DecorationImage(
+                  image: AssetImage(backgroundCardImage), fit: BoxFit.cover),
+            ),
           ),
           Positioned(
             child: AppBar(
@@ -32,9 +34,69 @@ class ProgramScreen extends StatelessWidget {
             alignment: Alignment.bottomCenter,
             child: Container(
               height: MediaQuery.of(context).size.height / 2,
-              color: const Color(0xFFFFFFFF),
+              color: const Color(0xFFF8F9FA),
             ),
           ),
+          Align(
+            alignment: Alignment.center,
+            child: Container(
+              height: MediaQuery.of(context).size.height / 3,
+              width: MediaQuery.of(context).size.width * 0.9,
+              decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                      color: Colors.grey,
+                      offset: Offset(2, 5),
+                      blurRadius: 5.0),
+                ],
+                borderRadius: BorderRadius.all(
+                  Radius.circular(10.0),
+                ),
+                color: const Color(0xFFFFFFFF),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Text(
+                    cardDuration,
+                    textAlign: TextAlign.center,
+                  ),
+                  Text(
+                    cardTitle,
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.libreBaskerville(
+                        fontWeight: FontWeight.w700, fontSize: 28.0),
+                  ),
+                  Center(
+                    child: Text(
+                      'In this 7-day programm, we\'ll help \n'
+                      'you to write your thougths down, \n'
+                      'identify any negative thinking and ...',
+                      textAlign: TextAlign.left,
+                      style: TextStyle(fontSize: 16.0),
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.symmetric(vertical: 10.0),
+                    decoration: BoxDecoration(
+                      border: Border(
+                        top: BorderSide(
+                          color: const Color(0xFFE5E5E5),
+                          width: 0.5,
+                        ),
+                      ),
+                    ),
+                    child: Text(
+                      'Keep reading',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontWeight: FontWeight.w500),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          )
         ],
       ),
       bottomNavigationBar: Container(
@@ -57,8 +119,7 @@ class ProgramScreen extends StatelessWidget {
             child: Center(
               child: Text(
                 'Start the programme',
-                style:
-                    TextStyle(color: const Color(0xFFFFFFFF), fontSize: 18),
+                style: TextStyle(color: const Color(0xFFFFFFFF), fontSize: 18),
               ),
             ),
           ),

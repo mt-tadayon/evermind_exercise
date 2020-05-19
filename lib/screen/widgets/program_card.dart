@@ -39,7 +39,9 @@ class ProgramCard extends StatelessWidget {
                     topRight: Radius.circular(5.0),
                   ),
                   image: DecorationImage(
-                      image: AssetImage(this.cardImagePath), fit: BoxFit.cover),
+                    image: AssetImage(this.cardImagePath),
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
               Padding(
@@ -56,7 +58,7 @@ class ProgramCard extends StatelessWidget {
                     fontWeight: FontWeight.w700,
                   ),
                 ),
-              )
+              ),
             ],
           ),
         ),
