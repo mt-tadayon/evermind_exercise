@@ -8,7 +8,10 @@ class ProgramScreen extends StatelessWidget {
   final String heroTag;
 
   ProgramScreen(
-      {this.cardDuration, this.cardTitle, this.backgroundCardImage, this.heroTag});
+      {this.cardDuration,
+      this.cardTitle,
+      this.backgroundCardImage,
+      this.heroTag});
 
   @override
   Widget build(BuildContext context) {
@@ -16,10 +19,7 @@ class ProgramScreen extends StatelessWidget {
       body: Stack(
         children: [
           Container(
-            height: MediaQuery
-                .of(context)
-                .size
-                .height / 2,
+            height: MediaQuery.of(context).size.height / 2,
             child: Hero(
                 tag: heroTag,
                 child: Image.asset(
@@ -40,24 +40,15 @@ class ProgramScreen extends StatelessWidget {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              height: MediaQuery
-                  .of(context)
-                  .size
-                  .height / 2,
+              height: MediaQuery.of(context).size.height / 2,
               color: const Color(0xFFF8F9FA),
             ),
           ),
           Align(
             alignment: Alignment.center,
             child: Container(
-              height: MediaQuery
-                  .of(context)
-                  .size
-                  .height / 3,
-              width: MediaQuery
-                  .of(context)
-                  .size
-                  .width * 0.9,
+              height: MediaQuery.of(context).size.height / 2,
+              width: MediaQuery.of(context).size.width * 0.9,
               decoration: BoxDecoration(
                 boxShadow: [
                   BoxShadow(
@@ -87,26 +78,36 @@ class ProgramScreen extends StatelessWidget {
                   Center(
                     child: Text(
                       'In this 7-day programm, we\'ll help \n'
-                          'you to write your thougths down, \n'
-                          'identify any negative thinking and ...',
+                      'you to write your thougths down, \n'
+                      'identify any negative thinking and ...',
                       textAlign: TextAlign.left,
                       style: TextStyle(fontSize: 16.0),
                     ),
                   ),
-                  Container(
-                    padding: EdgeInsets.symmetric(vertical: 10.0),
-                    decoration: BoxDecoration(
-                      border: Border(
-                        top: BorderSide(
-                          color: const Color(0xFFE5E5E5),
-                          width: 0.5,
+                  FlatButton.icon(
+                    onPressed: () {
+                      print('Hello');
+                    },
+                    icon: Container(
+                      decoration: BoxDecoration(
+                        border: Border(
+                          top: BorderSide(
+                            color: const Color(0xFFE5E5E5),
+                            width: 0.5,
+                          ),
+                        ),
+                      ),
+                      child: Text(
+                        'Keep reading',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 16.0,
                         ),
                       ),
                     ),
-                    child: Text(
-                      'Keep reading',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(fontWeight: FontWeight.w500),
+                    label: Icon(
+                      Icons.arrow_forward_ios,
+                      size: 16.0,
                     ),
                   )
                 ],
